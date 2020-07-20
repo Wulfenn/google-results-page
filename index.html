@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>build this webpage - Google Search</title>
+    <style>
+        body {
+            font-size: 14px;
+            font-family: arial, sans-serif;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #1a0dab;
+        }
+
+        video {
+            max-width: 100%;
+        }
+
+        table,
+        td {
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-collapse: collapse;
+            padding: 12px;
+            width: 110%;
+        }
+
+        .top-container {
+            width: 100%;
+            height: 50px;
+            display: flex;
+            align-content: center;
+            padding-top: 10px;
+            padding-left: 10px;
+
+        }
+
+        .google-logo {
+            width: 92px;
+            height: 30px;
+            margin-top: 10px;
+        }
+
+        .search-bar {
+            outline: none;
+            border-width: 1px;
+            border-color: rgba(0, 0, 0, 0.2);
+            border-radius: 80px;
+            width: 700px;
+            height: 40px;
+            margin-left: 40px;
+        }
+
+        .icon-apps {
+            margin-left: auto;
+            margin-right: 20px;
+            margin-top: 10px;
+            width: 20px;
+            height: 20px;
+        }
+
+
+        .sign-in {
+            background-color: #1a73e8;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            line-height: 35px;
+            border-radius: 5px;
+            width: 90px;
+            height: 35px;
+            margin-top: 5px;
+            margin-right: 20px;
+        }
+
+        .navbar {
+            padding: 10px;
+            height: 20px;
+            display: flex;
+            margin-left: 150px;
+            margin-top: 10px;
+        }
+
+        .search-svg {
+            width: 15px;
+            height: 15px;
+            opacity: 0.5;
+        }
+
+        .navbar-link {
+            color: rgba(0, 0, 0, 0.6);
+            text-decoration: none;
+            padding-right: 20px;
+            padding-left: 5px;
+        }
+
+        .navbar-link-right {
+            margin-left: 80px;
+        }
+
+        .box-end {
+            width: 100%;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .main-container {
+            margin-left: 160px;
+            width: 610px;
+        }
+
+        .search-results {
+            margin-top: 30px;
+        }
+
+        .search-link {
+            text-decoration: none;
+            font-size: large;
+            position: relative;
+            top: -5px;
+        }
+
+        a.search-link:hover {
+            text-decoration: underline;
+        }
+
+        .search-description {
+            color: rgba(0, 0, 0, 0.75);
+            padding-bottom: 10px;
+            text-align:justify;
+            line-height: 20px;
+            position: relative;
+            top: -10px;
+        }
+
+        .video-container {
+            display: flex;
+        }
+
+        .video-results {
+            width: 200px;
+            height: 300px;
+            margin-left: 8px;
+            border-style: solid;
+            border-width: 1px;
+            border-radius: 5px;
+            border-color: rgba(0, 0, 0, 0.1);
+            ;
+        }
+
+        .video-search-link {
+            margin: auto;
+            margin-top: 10px;
+            width: 180px;
+        }
+
+        .video-search-link a {
+            text-decoration: none;
+            font-size: medium;
+        }
+
+
+        .people-ask a {
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        .image-results {
+            display: flex;
+           
+        }
+
+        .image-related-searches {
+            font-size: smaller;      
+            padding: 10px;
+            margin-left: 5px;
+            border-style: solid;
+            border-width: 1px;
+            border-radius: 20px;
+            border-color: rgba(0, 0, 0, 0.1);
+            margin-left: 5px;
+            margin-top: 10px;
+            
+        }
+
+        .image-related-searches a {
+            color: rgba(0, 0, 0, 0.8);
+        }
+
+        .image-display {
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            margin-top: 10px;
+            margin-right: 10px;
+            max-width: 160px;
+            height: 120px;
+            object-fit: cover;
+        }
+
+        .related-searches {
+            display: flex;
+            flex-direction: column;
+            line-height: 30px;
+            font-size: larger;
+        }
+
+        .more-results {
+            margin-left: 385px;
+            padding-bottom: 20px;
+
+        }
+
+        .more-results-link {
+            margin-left: 9px;
+        }
+
+        .bottom-navbar {
+            width: 100%;
+            background-color: rgba(128, 128, 128, 0.14);
+        }
+
+        .location-bar {
+            margin-left: 150px;
+            display: flex;
+        }
+
+        .bottom-links {
+            margin-left: 150px;
+        }
+
+        .bottom-navbar-link {
+            color: rgba(0, 0, 0, 0.6);
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Begin Top Bar-->
+
+    <header>
+        <div class="top-container">
+            <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png"
+                class="google-logo" alt="">
+            <form>
+                <input type="text" name="search" class="search-bar">
+            </form>
+            <svg class="icon-apps">
+                <path
+                    d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z">
+                </path>
+            </svg>
+            <a href="#" class="sign-in"> Sign in </a>
+        </div>
+
+        <div class="navbar">
+            <svg class="search-svg" focusable="false" viewBox="0 0 24 24">
+                <path d="M10 2v2a6 6 0 0 1 6 6h2a8 8 0 0 0-8-8" fill="#34A853"></path>
+                <path d="M10 4V2a8 8 0 0 0-8 8h2c0-3.3 2.7-6 6-6" fill="#EA4335"></path>
+                <path d="M4 10H2a8 8 0 0 0 8 8v-2c-3.3 0-6-2.69-6-6" fill="#FBBC04"></path>
+                <path
+                    d="M22 20.59l-5.69-5.69A7.96 7.96 0 0 0 18 10h-2a6 6 0 0 1-6 6v2c1.85 0 3.52-.64 4.88-1.68l5.69 5.69L22 20.59"
+                    fill="#4285F4"></path>
+            </svg>
+            <a href="#" class="navbar-link"> All</a>
+            <svg class="search-svg" focusable="false" viewBox="0 0 24 24">
+                <path
+                    d="M12 11h6v2h-6v-2zm-6 6h12v-2H6v2zm0-4h4V7H6v6zm16-7.22v12.44c0 1.54-1.34 2.78-3 2.78H5c-1.64 0-3-1.25-3-2.78V5.78C2 4.26 3.36 3 5 3h14c1.64 0 3 1.25 3 2.78zM19.99 12V5.78c0-.42-.46-.78-1-.78H5c-.54 0-1 .36-1 .78v12.44c0 .42.46.78 1 .78h14c.54 0 1-.36 1-.78V12zM12 9h6V7h-6v2">
+                </path>
+            </svg>
+            <a href="#" class="navbar-link"> News</a>
+            <svg class="search-svg" focusable="false" viewBox="0 0 16 16">
+                <path
+                    d="M7.503 0c3.09 0 5.502 2.487 5.502 5.427 0 2.337-1.13 3.694-2.26 5.05-.454.528-.906 1.13-1.358 1.734-.452.603-.754 1.508-.98 1.96-.226.452-.377.829-.904.829-.528 0-.678-.377-.905-.83-.226-.451-.527-1.356-.98-1.959-.452-.603-.904-1.206-1.356-1.734C3.132 9.121 2 7.764 2 5.427 2 2.487 4.412 0 7.503 0zm0 1.364c-2.283 0-4.14 1.822-4.14 4.063 0 1.843.86 2.873 1.946 4.177.468.547.942 1.178 1.4 1.79.34.452.596.99.794 1.444.198-.455.453-.992.793-1.445.459-.61.931-1.242 1.413-1.803 1.074-1.29 1.933-2.32 1.933-4.163 0-2.24-1.858-4.063-4.139-4.063zm0 2.734a1.33 1.33 0 11-.001 2.658 1.33 1.33 0 010-2.658">
+                </path>
+            </svg>
+            <a href="#" class="navbar-link">Maps</a>
+            <svg class="search-svg" focusable="false" viewBox="0 0 24 24">
+                <path
+                    d="M10 16.5l6-4.5-6-4.5v9zM5 20h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1zm14.5 2H5a3 3 0 0 1-3-3V4.4A2.4 2.4 0 0 1 4.4 2h15.2A2.4 2.4 0 0 1 22 4.4v15.1a2.5 2.5 0 0 1-2.5 2.5">
+                </path>
+            </svg>
+            <a href="#" class="navbar-link">Videos</a>
+            <svg class="search-svg" focusable="false" viewBox="0 0 24 24">
+                <path
+                    d="M21.11 2.89A3.02 3.02 0 0 0 18.95 2h-5.8c-.81 0-1.58.31-2.16.89L7.25 6.63 2.9 10.98a3.06 3.06 0 0 0 0 4.32l5.79 5.8a3.05 3.05 0 0 0 4.32.01l8.09-8.1c.58-.58.9-1.34.9-2.16v-5.8c0-.81-.32-1.59-.89-2.16zM20 10.85c0 .28-.12.54-.32.74l-3.73 3.74-4.36 4.36c-.41.41-1.08.41-1.49 0l-2.89-2.9-2.9-2.9a1.06 1.06 0 0 1 0-1.49l8.1-8.1c.2-.2.46-.3.74-.3l5.8-.01A1.05 1.05 0 0 1 20 5.05v5.8zM16 6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2">
+                </path>
+            </svg>
+            <a href="#" class="navbar-link">Shopping</a>
+            <svg class="search-svg" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                    d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z">
+                </path>
+            </svg>
+            <a href="#" class="navbar-link">More</a>
+            <a href="#" class="navbar-link navbar-link-right">Settings</a>
+            <a href="#" class="navbar-link">Tools</a>
+        </div>
+
+        <div class="box-end"></div>
+        <p style="color: rgba(0, 0, 0, 0.5); margin-left: 160px;">About 77,900,000 results (0.39 seconds)</p>
+
+    </header>
+
+    <!-- End Top Bar-->
+
+    <main>
+        <div class="main-container">
+            <div class="search-results">
+                <p><strong>Ad ·</strong> www.wix.com/ </p>
+                <a href="#" class="search-link">Build Your Own Website - Create Your Own Website, Free.‎</a>
+                <p class="search-description">Easy to Use, Online <strong>Website</strong> Builder. Top industry
+                    hosting.
+                    24/7
+                    support center. Easy-to-add blog. Mobile optimized. Advanced image editor. Traffic generation tools.
+                    1000s
+                    of free images. Social media compatible. Custom domain name. Easy drag n’ drop.</p>
+
+                <p><strong>Ad ·</strong> www.thebest10websitebuilders.com/build-a-free/website </p>
+                <a href="#" class="search-link">10 Best Website Builders 2020 - Build Your Own Website Today‎</a>
+                <p class="search-description"><strong>Build</strong> Your Own <strong>Website</strong>. No Techincal
+                    Skills
+                    Needed. It's Easy. Start Now!</p>
+
+                <p> victor-lf.github.io </p>
+                <a href="#" class="search-link">build this webpage - GitHub Pages‎‎</a>
+                <p class="search-description"><strong>build this webpage</strong>.
+                    https://benjdelt.github.io/google-results/.
+                    With zero coding experience, artist building 180 webpages in 180 days ...</p>
+            </div>
+
+            <!-- Begin Video Results -->
+
+            <p style="font-size: large;"> Videos</p>
+            <div class="video-container">
+                <div class="video-results">
+                    <video>
+                        <source
+                            src="https://encrypted-vtbn1.gstatic.com/video?q=tbn:ANd9GcQW51JRF1gPbKiG_NN-StBAXhm8j0muVugBBc8rJW9tB0uBWNHa" type="video/mp4">
+                    </video>
+                    <div class="video-search-link"><a href="#"> How to Make a Website in 10 mins - Simple & Easy</a>
+
+                        <p style="color: rgba(0, 0, 0, 0.5);margin: 70px 0 0 5px;">Website Learners</p>
+                        <p style="margin: 10px 0 0 5px;">YouTube <span style="color: rgba(0, 0, 0, 0.5);">- Jan 3,
+                                2018</span></p>
+                    </div>
+                </div>
+                <div class="video-results">
+                    <video>s
+                        <source
+                            src="https://encrypted-vtbn2.gstatic.com/video?q=tbn:ANd9GcRSKThXdHj_7KWNMXIfXc3Wen7XsSA9aerR-gDMLzDc5jODE1uK" type="video/mp4">
+                    </video>
+                    <div class="video-search-link"><a href="#"> How to Build a Website Without Code | Everyone Can Build
+                            a
+                            ...</a></div>
+                    <p style="color: rgba(0, 0, 0, 0.5);margin: 70px 0 0 10px;">Roberto Blake</p>
+                    <p style="margin: 10px 0 0 10px;">YouTube <span style="color: rgba(0, 0, 0, 0.5);">- Nov 7,
+                            2016</span></p>
+                </div>
+
+            </div>
+
+            <!-- End Video Results-->
+
+            <div class="search-results">
+                <p> www.websitebuilderexpert.com </p>
+                <a href="#" class="search-link">How to Build a Website 2020 | The Complete Beginner's Guide‎‎</a>
+                <p class="search-description"><span style="color: rgba(0, 0, 0, 0.5);">Jun 5, 2020 -</span> How to
+                    <strong>Build</strong> a <strong>Website</strong>: the Step-by-Step Guide to Easy Setup. We'll look
+                    at
+                    how
+                    to make a <strong>website</strong> with both a <strong>website</strong> builder and WordPress, ...
+                </p>
+
+                <p> arstechnica.com </p>
+                <a href="#" class="search-link">With zero coding experience, artist building 180 webpages in ...</a>
+                <p class="search-description"><span style="color: rgba(0, 0, 0, 0.5);">Jul 26, 2013 -</span> One of
+                    Jennifer
+                    Dewalt's creations, this <strong>webpage</strong> lets visitors create paintings in ...
+                    <strong>Build</strong> a different <strong>website</strong> every day for 180 consecutive days.</p>
+            </div>
+
+            <!-- Begin People also ask Section-->
+
+            <div id="people-ask">
+                <table>
+                    <tr>
+                        <td style="font-size: large;">People also ask</td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: larger;">How can I create my own webpage?</td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: larger;">How can I create my own website on Google?</td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: larger;">How can I create a website and earn money?</td>
+                    </tr>
+                </table>
+                <p style="width: 110%;text-align:right;font-size:smaller;"><a href="#" style="color: rgba(0, 0, 0, 0.5);"><em>Feedback</em></a></p>
+            </div>
+
+            <!-- End  People also ask Section-->
+
+            <div class="search-results">
+                <p> www.pcmag.com </p>
+                <a href="#" class="search-link">How to Create a Website | PCMag</a>
+                <p class="search-description">If you need to quickly <strong>build</strong> a simple
+                    <strong>website</strong>,
+                    starting with a blogging service is a great way to go. The major player in the blog game is
+                    WordPress, a
+                    content ...</p>
+
+                <p> www.buildthis.io </p>
+                <a href="#" class="search-link">How to Build A Website: A-to-Z Beginner Guide - BuildThis.io</a>
+                <p class="search-description"><span style="color: rgba(0, 0, 0, 0.5);">Apr 21, 2020 -</span> In this
+                    article, I will show you the essential steps in creating a <strong>website</strong>. Register a
+                    domain
+                    name; Signup for a web hosting; Design your ...</p>
+
+                <p> www.squarespace.com </p>
+                <a href="#" class="search-link">Squarespace: Build a Website – Website Builder</a>
+                <p class="search-description">Squarespace is the all-in-one solution for anyone looking to create a
+                    beautiful <strong>website</strong>. Domains, eCommerce, hosting, galleries, analytics, and 24/7
+                    support
+                    all ...</p>
+
+                <p> www.google.com </p>
+                <a href="#" class="search-link">Free Website Builder For Your Business - Google My Business</a>
+                <p class="search-description">Let Google <strong>build</strong> your first <strong>website</strong> for
+                    free. We'll help you create a beautiful <strong>website</strong> to impress and engage new customers
+                    –
+                    and establish your business online.</p>
+
+            </div>
+
+            <!-- Begin Images Section-->
+
+            <a href="#" class="search-link">Images for build this webpage</a>
+            <div class="image-results">
+                <div class="image-related-searches"><a href="#">personal website</a></div>
+                <div class="image-related-searches"><a href="#">web design</a></div>
+                <div class="image-related-searches"><a href="#">wordpress</a></div>
+                <div class="image-related-searches"><a href="#">domain</a></div>
+                <div class="image-related-searches"><a href="#">wix</a></div>
+                <div class="image-related-searches"><a href="#">template</a></div>
+                <div class="image-related-searches"><a href="#">css</a></div>
+                <div class="image-related-searches"><a href="#">mobirise</a></div>
+            </div>
+            <div class="image-results">
+                <a href="#"><img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDrUAaLvbm54XY2YSW9noZbnWyFPxR9MSot8fGg9EG&s"
+                        class="image-display" alt=""></a>
+                <a href="#"><img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzUuuKizMOmgPYPOdFP0WkORTivkmDDJ-UIsvft_ih-g&s"
+                        class="image-display" alt=""></a>
+                <a href="#"><img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc-RJWRqpkpy7wBjc-2YAmLbTPzTdfKArfY-v2JvvbUQ&s"
+                        class="image-display" alt=""></a>
+                <a href="#"><img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoP9jMFfd4rDvYerkh6EHxtUPVkutns9_UM8FDB0v-6g&s"
+                        class="image-display" alt=""></a>
+            </div>
+
+            <p style="text-align:right;font-size:small;"><a href="#"
+                    style="text-decoration: none;color: rgba(0, 0, 0, 0.5);">Report images</a></p>
+            <!-- End Images Section-->
+
+
+            <!-- Begin Related Searches Section-->
+
+            <p style="font-size: large;">Searches related to build this webpage</p>
+            <div class="related-searches">
+
+
+                <a href="#"><svg class="search-svg" focusable="false" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                        </path>
+                    </svg>
+                    <strong>how to</strong> build <strong>a website from scratch</strong></a>
+
+                <a href="#"><svg class="search-svg" focusable="false" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                        </path>
+                    </svg>
+                    build <strong>a website free</strong></a>
+
+                <a href="#"><svg class="search-svg" focusable="false" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                        </path>
+                    </svg>
+                    <strong>the odin project</strong></a>
+
+                <a href="#"><svg class="search-svg" focusable="false" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                        </path>
+                    </svg>
+                    build <strong>a website in a day</strong></a>
+
+                <a href="#"><svg class="search-svg" focusable="false" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                        </path>
+                    </svg>
+                    <strong>how to create a website free of cost</strong></a>
+
+                <a href="#"><svg class="search-svg" focusable="false" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                        </path>
+                    </svg>
+                    <strong>how to create a website on google</strong></a>
+
+                <a href="#"><svg class="search-svg" focusable="false" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                        </path>
+                    </svg>
+                    <strong>how to create a website pdf</strong></a>
+
+                <a href="#"><svg class="search-svg" focusable="false" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                        </path>
+                    </svg>
+                    <strong>create professional website</strong></a>
+
+            </div>
+
+        </div>
+
+        <!-- End Related Searches Section-->
+
+
+        <img style="margin-left: 350px;" src="https://i.imgur.com/gJyvzTm.png" alt="">
+        <div class="more-results">
+            <a href="#" class="more-results-link">1</a>
+            <a href="#" class="more-results-link">2</a>
+            <a href="#" class="more-results-link">3</a>
+            <a href="#" class="more-results-link">4</a>
+            <a href="#" class="more-results-link">5</a>
+            <a href="#" class="more-results-link">6</a>
+            <a href="#" class="more-results-link">7</a>
+            <a href="#" class="more-results-link">8</a>
+            <a href="#" class="more-results-link">9</a>
+            <a href="#" class="more-results-link">10</a>
+            <a href="#" style="margin-left: 50px;">Next</a>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="bottom-navbar">
+            <div class="location-bar">
+                <p> <strong>12345, City, ST</strong> <span style="color: rgba(0, 0, 0, 0.6);">- From your Internet
+                        address -</span>
+                    <a href="#" class="bottom-navbar-link">Use precise location</a>
+                    <span style="color: rgba(0, 0, 0, 0.6);">-</span>
+                    <a href="#" class="bottom-navbar-link">Learn more</a>
+                </p>
+            </div>
+            <div class="bottom-links">
+                <a href="#" class="navbar-link">Help</a>
+                <a href="#" class="navbar-link">Send feedback</a>
+                <a href="#" class="navbar-link">Privacy</a>
+                <a href="#" class="navbar-link">Terms</a>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>
